@@ -16,7 +16,7 @@ local Process
 --// The callback is expected to return a nil value sometimes which should be ingored
 local function HookMetaMethod(self, Call: string, Callback: MetaCallback): MetaCallback
 	local OriginalFunc
-	OriginalFunc = hookmetamethod(self, Call, function(...)
+	OriginalFunc = hookmetamethod(self, Call, newclosure(function(...)
 		--// Invoke callback and check for a reponce otherwise ignored
 		local ReturnValues = Callback(...)
 		if ReturnValues then
@@ -26,7 +26,7 @@ local function HookMetaMethod(self, Call: string, Callback: MetaCallback): MetaC
 
 		--// Invoke orignal function
 		return OriginalFunc(...)
-	end)
+	end))
 	return OriginalFunc
 end
 
@@ -207,5 +207,6 @@ function Hook:BeginService(Libraries, ExtraData, ChannelId: number)
 	self:Init(InitData)
 	self:HookMeta()
 end
+
 
 return Hook
