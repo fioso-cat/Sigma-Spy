@@ -55,8 +55,8 @@ type Log = {
 local SetClipboard = setclipboard or toclipboard or set_clipboard
 
 --// Libraries
-local ReGui = loadstring(game:HttpGet('https://raw.githubusercontent.com/depthso/Dear-ReGui/refs/heads/main/ReGui.lua'))()
-local IDEModule = loadstring(game:HttpGet('https://raw.githubusercontent.com/depthso/Dear-ReGui/refs/heads/main/lib/ide.lua'))()
+local ReGui = loadstring(game:HttpGet('https://raw.githubusercontent.com/fioso-cat/Sigma-Spy/main/assets/ReGui.lua'))()
+local IDEModule = loadstring(game:HttpGet('https://raw.githubusercontent.com/fioso-cat/Sigma-Spy/main/assets/ide.lua'))()
 
 --// Services
 local InsertService: InsertService
@@ -903,5 +903,6 @@ function Ui:CreateLog(Data: Log)
 		TextXAlignment = Enum.TextXAlignment.Left
     })
 end
+
 
 return Ui
