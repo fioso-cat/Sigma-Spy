@@ -5,7 +5,7 @@ type table = {
 }
 
 --// Libraries
-local ParserModule = loadstring(game:HttpGet('https://raw.githubusercontent.com/depthso/Roblox-parser/refs/heads/main/main.lua'))()
+local ParserModule = loadstring(game:HttpGet('https://raw.githubusercontent.com/fioso-cat/Roblox-parser/main/main.lua'))()
 
 --// Parser
 function ParserModule:Import(Name: string)
@@ -180,5 +180,6 @@ function Generation:TableScript(Table: table)
 
 	return Code
 end
+
 
 return Generation
